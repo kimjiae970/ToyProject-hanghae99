@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500&display=swap" rel="stylesheet">
+
+    <title>만화 베스트20</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hahmlet', serif;
+        }
+
+        @media (min-width: 769px) {
+            .header {
+                background-image:url("https://t1.daumcdn.net/cfile/tistory/114D75304CE2681C03");
+                background-position: center;
+
+                width: inherit;
+                height: 20vh;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            #root {
+                width: 100vw;
+                height: 300vh;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            .content {
+                width: inherit;
+                height: inherit;
+
+                display: flex;
+                flex-direction: row;
+
+            }
+
+            .content > div {
+                width: 50vw;
+                height: inherit;
+
+                margin: 10px;
+
+            }
+
+            .mytitle {
+                width: inherit;
+                height: 30px;
+
+                margin-top: 30px;
+
+                padding-left: 70px;
+
+                display: flex;
+                align-items: center;
+
+                font-size: xx-large;
+                font-weight: bold;
+            }
+
+            .book_list {
+                width: 40vw;
+                height: inherit;
+
+                margin: 50px auto 0px auto;
+
+                display: flex;
+                flex-direction: column;
+            }
+
+            .wrap {
+                margin-bottom: 30px;
+
+                width: 40vw;
+                height: inherit;
+
+                display: flex;
+                flex-direction: row;
+
+                box-shadow: 0px 0px 3px 0px gray;
+                border-radius: 20px;
+            }
+
+            .img {
+                margin: auto;
+                padding: 20px;
+
+                display: flex;
+                flex-direction: row;
+            }
+
+            .rank {
+                font-size: x-large;
+                font-weight: bold;
+                width: 5vw;
+                height: inherit;
+
+                margin: auto;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .book_info {
+                width: 30vw;
+                height: inherit;
+
+                margin: auto;
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+
+
+            #title {
+                margin: 7px
+            }
+
+            #author {
+                margin: 7px
+            }
+
+            #publisher {
+                margin: 7px
+            }
+
+            #price {
+                margin: 7px
+            }
+
+            #star {
+                margin: 7px
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                background-image:url("https://t1.daumcdn.net/cfile/tistory/114D75304CE2681C03");
+                background-position: center;
+
+                width: inherit;
+                height: 20vh;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #root {
+                width: 100vw;
+                height: 600vh;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            .content {
+                width: inherit;
+                height: inherit;
+
+                display: flex;
+                flex-direction: column;
+
+
+            }
+
+            .content > div {
+                width: 50vw;
+                height: inherit;
+
+                margin: 5px;
+
+            }
+
+            .mytitle {
+                width: inherit;
+                height: 15px;
+
+                margin: 20px auto 0 auto;
+
+                padding-left: 5px;
+
+                display: flex;
+                align-items: center;
+
+                font-size: x-large;
+                font-weight: bold;
+            }
+
+            .book_list {
+                width: 40vw;
+                height: inherit;
+
+                margin: 25px auto 0px auto;
+
+                display: flex;
+                flex-direction: column;
+            }
+
+            .wrap {
+                margin-bottom: 20px;
+
+                width: 90vw;
+                height: inherit;
+
+                display: flex;
+                flex-direction: row;
+
+                box-shadow: 0px 0px 3px 0px gray;
+                border-radius : 20px;
+
+            }
+
+            .img {
+                margin: auto;
+                padding: 10px;
+
+                display: flex;
+                flex-direction: row;
+            }
+
+            .rank {
+                font-size: large;
+                font-weight: bold;
+                width: 10vw;
+                height: inherit;
+
+
+                margin: auto;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .book_info {
+                width: 55vw;
+                height: inherit;
+
+                margin: auto;
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+
+            #title {
+                margin: 3px
+            }
+
+            #author {
+                margin: 3px
+            }
+
+            #publisher {
+                margin: 3px
+            }
+
+            #price {
+                margin: 3px
+            }
+
+            #star {
+                margin: 3px
+            }
+        }
+
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            show_weekly();
+            show_monthly();
+        });
+
+        function show_weekly() {
+            $.ajax({
+                type: 'GET',
+                url: '/comic/weekly',
+                data: {},
+                success: function (response) {
+                    let rows = response['best_sellers1']
+                    for (let i = 0; i < rows.length; i++) {
+                        let name = rows[i]['name']
+                        let rank = rows[i]['rank']
+                        let publisher = rows[i]['publisher']
+                        let writer = rows[i]['writer']
+                        let price = rows[i]['price']
+                        let image = rows[i]['image']
+                        let link = rows[i]['link']
+                        let star = rows[i]['star']
+                        let star_img = '⭐'.repeat(star)
+
+                        let temp_html = `<a href="${link}">
+                                            <div class="wrap">
+                                                <div class="rank">
+                                                    <p id="rank" class="ranking">${rank}위</p>
+                                                </div>
+                                                <div class="img">
+                                                    <img src="${image}">
+                                                </div>
+                                                <div class="book_info">
+                                                    <p id="title">책 제목 : ${name}</p>
+                                                    <p id="author">작가 : ${writer}</p>
+                                                    <p id="publisher">출판사 : ${publisher}</p>
+                                                    <p id="price">가격 : ${price}</p>
+                                                    <p id="star">별점 : ${star_img}</p>
+                                                </div>
+                                            </div>
+                                        </a>`
+                        $('#week_list').append(temp_html)
+                    }
+                }
+            });
+        }
+
+        function show_monthly() {
+            $.ajax({
+                type: 'GET',
+                url: '/comic/monthly',
+                data: {},
+                success: function (response) {
+                    let rows = response['best_sellers2']
+                    for (let i = 0; i < rows.length; i++) {
+                        let name = rows[i]['name']
+                        let rank = rows[i]['rank']
+                        let publisher = rows[i]['publisher']
+                        let writer = rows[i]['writer']
+                        let price = rows[i]['price']
+                        let image = rows[i]['image']
+                        let link = rows[i]['link']
+                        let star = rows[i]['star']
+                        let star_img = '⭐'.repeat(star)
+
+                        let temp_html = `<a href="${link}">
+                                            <div class="wrap">
+                                                <div class="rank">
+                                                    <p id="rank" class="ranking">${rank}위</p>
+                                                </div>
+                                                <div class="img">
+                                                    <img src="${image}">
+                                                </div>
+                                                <div class="book_info">
+                                                    <p id="title">책 제목 : ${name}</p>
+                                                    <p id="author">작가 : ${writer}</p>
+                                                    <p id="publisher">출판사 : ${publisher}</p>
+                                                    <p id="price">가격 : ${price}</p>
+                                                    <p id="star">별점 : ${star_img}</p>
+                                                </div>
+                                            </div>
+                                        </a>`
+                        $('#month_list').append(temp_html)
+                    }
+                }
+            });
+        }
+    </script>
+
+</head>
+<body>
+<div id="root">
+    <div class="header">
+        <h1 style='font-weight: bold'>소소한 설레임이 만개하는 화사한 공간</h1>
+    </div>
+    <div class="content">
+        <div class="week_best">
+            <div class="mytitle">📖 주간 베스트셀러</div>
+            <div class="book_list" id="week_list">
+            </div>
+        </div>
+
+        <div class="month_best">
+            <div class="mytitle">📖 월간 베스트셀러</div>
+            <div class="book_list" id="month_list">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

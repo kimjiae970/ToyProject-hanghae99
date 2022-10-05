@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="소.설.만.화"/>
+    <meta property="og:description" content="소설과 만화의 공간으로"/>
+    <meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/114D75304CE2681C03"/>
+
+    <title>24조 토이 프로젝트_메인페이지</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Hahmlet', serif;
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            #root {
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .mytitle {
+                color: black;
+
+                width: auto;
+                height: 24vh;
+
+                background-image: url("https://t1.daumcdn.net/cfile/tistory/114D75304CE2681C03");
+                background-size: revert;
+                background-position: center;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .weather {
+                color: darkslateblue;
+
+                width: auto;
+                height: 5vh;
+
+                margin: auto;
+                margin-top: 3px;
+                background-color: whitesmoke;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mycontent {
+                width: inherit;
+                height: 75vh;
+
+                background-color: floralwhite;
+                margin-top: 3px;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mycontent > div {
+                width: 30vw;
+                height: 50vw;
+
+                margin: 40px;
+
+                background-color: floralwhite;
+
+                display: flex;
+                flex-direction: column;
+
+                padding: 20px;
+            }
+
+            .novel > p {
+                margin: auto;
+
+            }
+
+            .novel > button {
+                color: black;
+
+                margin-left: 22px;
+                margin-right: 22px;
+
+                margin-top: 15px;
+                padding: 3px;
+
+                border-radius: 13px;
+            }
+
+            .novel > button:hover {
+                color: darkslateblue;
+                box-shadow: 0 100px 0 100px rgba(0, 0, 0, 0.5) inset;
+            }
+
+            .comic > p {
+                margin: auto;
+            }
+
+            .comic > button {
+                color: black;
+
+                margin-left: 22px;
+                margin-right: 22px;
+
+                margin-top: 15px;
+                padding: 3px;
+
+                border-radius: 13px;
+            }
+
+            .comic > button:hover {
+                color: darkslateblue;
+                box-shadow: 0 100px 0 100px rgba(0, 0, 0, 0.5) inset;
+            }
+
+            .novel_img {
+                width: 23vw;
+                height: 23vw;
+
+                background-image: url("http://image.kyobobook.co.kr/images/book/large/914/l9788954699914.jpg");
+                background-size: 100px;
+                background-position: center;
+
+
+                margin: 20px auto 0 auto;
+                background-color: #d5d5d5;
+
+                border-radius: 18px;
+            }
+
+            .comic_img {
+                width: 22vw;
+                height: 23vw;
+
+                background-image: url("http://image.kyobobook.co.kr/images/book/large/592/l9791136738592.jpg");
+                background-size: 100px;
+                background-position: center;
+
+                margin: 20px auto 0 auto;
+                background-color: #d5d5d5;
+
+                border-radius: 18px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #root {
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .mytitle {
+                color: black;
+
+                width: auto;
+                height: 24vh;
+
+                background-image: url("https://t1.daumcdn.net/cfile/tistory/114D75304CE2681C03");
+                background-size: revert;
+                background-position: center;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .weather {
+                color: darkslateblue;
+
+                width: auto;
+                height: 5vh;
+
+                margin: auto;
+                margin-top: 3px;
+                background-color: whitesmoke;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mycontent {
+                width: inherit;
+                height: 75vh;
+
+                background-color: floralwhite;
+                margin-top: 3px;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mycontent > div {
+                width: 30vw;
+                height: 30vw;
+
+                margin: 40px;
+
+                background-color: floralwhite;
+
+                display: flex;
+                flex-direction: column;
+
+                padding: 20px;
+            }
+
+            .novel > p {
+                margin: auto;
+
+            }
+
+            .novel > button {
+                color: black;
+
+                margin-left: 22px;
+                margin-right: 22px;
+
+                margin-top: 15px;
+                padding: 3px;
+
+                border-radius: 13px;
+            }
+
+            .novel > button:hover {
+                color: darkslateblue;
+                box-shadow: 0 100px 0 100px rgba(0, 0, 0, 0.5) inset;
+            }
+
+            .comic > p {
+                margin: auto;
+            }
+
+            .comic > button {
+                color: black;
+
+                margin-left: 22px;
+                margin-right: 22px;
+
+                margin-top: 15px;
+                padding: 3px;
+
+                border-radius: 13px;
+            }
+
+            .comic > button:hover {
+                color: darkslateblue;
+                box-shadow: 0 100px 0 100px rgba(0, 0, 0, 0.5) inset;
+            }
+
+            .novel_img {
+                width: 23vw;
+                height: 23vw;
+
+                background-image: url("http://image.kyobobook.co.kr/images/book/large/914/l9788954699914.jpg");
+                background-size: 230px;
+                background-position: center;
+
+
+                margin: 20px auto 0 auto;
+                background-color: #d5d5d5;
+
+                border-radius: 18px;
+            }
+
+            .comic_img {
+                width: 22vw;
+                height: 23vw;
+
+                background-image: url("http://image.kyobobook.co.kr/images/book/large/592/l9791136738592.jpg");
+                background-size: 230px;
+                background-position: center;
+
+                margin: 20px auto 0 auto;
+                background-color: #d5d5d5;
+
+                border-radius: 18px;
+            }
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
+                data: {},
+                success: function (response) {
+                    let temp = response['temp']
+                    $('#temp').text(temp)
+                }
+            })
+        });
+
+    </script>
+</head>
+<body>
+<div id="root">
+    <div class="mytitle">
+        <h1>소소한 설레임이 만개하는 화사한 공간</h1>
+    </div>
+
+    <div class="weather">
+        <div>
+            <p>책 읽기 딱 좋은 오늘 : <span id="temp">00.00</span>도</p>
+        </div>
+        <div> 🌧</div>
+    </div>
+
+    <div class="mycontent">
+        <div class="novel">
+            <p class="nov_text">소설 속으로 !</p>
+            <button type="button" onclick="window.location.href='/novel'" class="btn btn-outline-success">풍 ~ 덩 ?
+            </button>
+            <div class="novel_img"></div>
+        </div>
+        <div class="comic">
+            <p class="com_text">만화 속으로 !</p>
+            <button type="button" onclick="window.location.href='/comic'"  class="btn btn-outline-success">풍 ~ 덩 ?
+            </button>
+            <div class="comic_img"></div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
